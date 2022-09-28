@@ -1,0 +1,178 @@
+///.   What are the different types of HTTP requests?
+
+//    HTTP (Hypertext Transfer Protocol) specifies a collection of request methods to specify what action is to be performed on a particular resource. The most commonly used HTTP request methods are GET, POST, PUT, PATCH, and DELETE. These are equivalent to the CRUD operations (create, read, update, and delete).
+
+//       GET: GET request is used to read/retrieve data from a web server. GET returns an HTTP status code of 200 (OK) if the data is successfully retrieved from the server.
+
+//       POST: POST request is used to send data (file, form data, etc.) to the server. On successful creation, it returns an HTTP status code of 201.
+
+//       PUT: A PUT request is used to modify the data on the server. It replaces the entire content at a particular location with data that is passed in the body payload. If there are no resources that match the request, it will generate one.
+
+
+//       PATCH: PATCH is similar to PUT request, but the only difference is, it modifies a part of the data. It will only replace the content that you want to update.
+
+//       DELETE: A DELETE request is used to delete the data on the server at a specified location.
+
+
+
+
+
+
+
+
+
+///.      Explain the concept of middleware in Node.js.
+
+
+//.    Middleware is a function which has access to request object,response object and next function in application's request-response cycle.
+//     Middleware can be used to perform many tasks like--
+//     Call next middleware in stack
+//     Execute any code
+//     Make changes to request and response object
+//     End request-response cycle.
+//     Can be used to add logging and authentication functionality
+
+
+
+
+
+
+///.     Explain CORS
+
+Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any origins (domain, scheme, or port) other than its own from which a browser should permit loading resources. 
+CORS also relies on a mechanism by which browsers make a "preflight" request to the server hosting the cross-origin resource, in order to check that the server will permit the actual request.
+ In that preflight, the browser sends headers that indicate the HTTP method and headers that will be used in the actual request.
+
+e.g : An example of a cross-origin request: the front-end JavaScript code served from https://domain-a.com uses XMLHttpRequest to make a request for https://domain-b.com/data.json.
+
+
+
+
+
+
+
+
+///.     What is Express. how it helps you to create a backend application
+
+
+//     Express is a minimal and flexible Node.js web application framework that provides a robust set of features to develop web and mobile applications. It facilitates the rapid development of Node based Web applications. Following are some of the core features of Express framework −
+
+//     Allows to set up middlewares to respond to HTTP Requests.
+
+//     Defines a routing table which is used to perform different actions based on HTTP Method and URL.
+
+//     Allows to dynamically render HTML Pages based on passing arguments to templates.
+
+
+
+
+
+///.    Explain min 5 status codes gets used in Backend development.
+
+
+//. 1. 100 Information
+
+The HTTP 100 informational status response code indicates that everything is OK and that the client can continue with the request.
+
+To have a server check the request’s headers, a client must send Expect: 100-continue as a header in its initial request and receive a 100 Continue status code in response before sending the body.
+
+Other informational codes:
+
+100 — Continue;
+101 — Switching protocol;
+103 — Checkpoints.
+
+
+//  2. 200 Successful
+
+  The HTTP 200 success status response code indicates that the request has succeeded. A 200 response is cacheable by default.
+
+ The meaning of success depends on the HTTP request method:
+
+GET: The resource has been fetched and is sent in the message body.
+HEAD: The representation headers are included in the response without a body message.
+POST: The resource describing the result of the action is sent in the message body
+TRACE: The body contains the request message as received by the server.
+
+//   3. 300 Redirection
+
+The HTTP 300 redirect status response code indicates that the request has more than one possible response. The user-agent or the user should choose one of them. As there is no standardized way of choosing one of the responses, this response code is very rarely used.
+
+Redirection types:
+
+301 — Moved Permanently;
+302 — Found;
+304 — Not Modified;
+305 — Use Proxy;
+307 — Temporary Redirect.
+
+//   4. 400 Client Errors
+
+//  The HTTP (HyperText Transfer Protocol) 400 Bad Request response status code indicates that the server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).
+
+Other client errors codes:
+
+400: Bad Request;
+401: Unauthorized;
+403: Forbidden;
+404: Not Found;
+408: Request Timeout;
+410: Gone;
+418: A teapot;
+429: Too Many Requests.
+
+
+
+//   5. 500 Server Errors
+
+       The HTTP 500 Internal Server Error server error response code indicates that the server encountered an unexpected condition that prevented it from fulfilling the request.
+
+      This error response is a generic “catch-all” response. Usually, this indicates the server cannot find a better 500 error code to respond. Sometimes, server administrators log error responses like the 500 status code with more details about the request to prevent the error from happening again in the future.
+
+
+Other server error codes:
+
+500 — Internal Server Error;
+502 — Bad Gateway;
+503 — Service Unavailable;
+504 — Gateway Timeout.
+
+
+
+
+
+
+
+
+
+
+
+///.    Difference between HTTP and HTTPS
+
+
+  //      HTTP stands for HyperText Transfer Protocol and HTTPS stands for HyperText Transfer Protocol Secure.
+  //      In HTTP, URL begins with “http://” whereas URL starts with “https://”
+  //      HTTP uses port number 80 for communication and HTTPS uses 443
+  //      HTTP is considered to be insecure and HTTPS is secure.
+  //      HTTP Works at Application Layer and HTTPS works at Transport Layer.
+  //      In HTTP, Encryption is absent and Encryption is present in HTTPS as discussed above.
+  //      HTTP does not require any certificates and HTTPS needs SSL Certificates.
+  //      HTTP speed is faster than HTTPS and HTTPS speed is slower than HTTP.
+  //      HTTP does not improve search ranking while HTTPS improves search ranking.
+  //      HTTP does not use data hashtags to secure data, while HTTPS will have the data before sending it and return it to its original state on the receiver side.
+
+
+
+
+
+
+
+
+///.   What are JWT tokens?
+
+
+
+//.   A JSON web token(JWT) is JSON Object which is used to securely transfer information over the web(between two parties). 
+//     It can be used for an authentication system and can also be used for information exchange.The token is mainly composed of header, payload, signature. 
+//     These three parts are separated by dots(.). JWT defines the structure of information we are sending from one party to the another, and it comes in two forms – Serialized, Deserialized. The Serialized approach is mainly used to transfer the data through the network with each request and response. While the deserialized approach is used to read and write data to the web token.
+
